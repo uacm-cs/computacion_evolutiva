@@ -128,7 +128,7 @@ def cargar_datos(train_file, test_file):
 #------------------------------------------------------------------------
 def vectorizar_texto(train_data, test_data):
     print(f"Vectorizando datos...")
-    N_GRAMS = 3
+    N_GRAMS = 1
     vectorizador = TfidfVectorizer(analyzer="word", preprocessor=mi_preprocesamiento, tokenizer=mi_tokenizador,  ngram_range=(1,N_GRAMS))
     X_train = vectorizador.fit_transform(train_data)
     total_features = len(vectorizador.get_feature_names_out())
